@@ -12,7 +12,7 @@ require(tidyverse); require (plyr); require (reshape); require (ggplot2); requir
 
 # Open the average Temperatures and depths according to the DEFI loggers
 
-DEFI_Depths_Temps <- read.csv(file = "Environment/DEFI_loggers/082024/DEFI_Average_Transects_202408.csv", header = T, dec = ".", sep = ",")
+DEFI_Depths_Temps <- read.csv(file = "Data/Environment/DEFI_loggers/082024/DEFI_Average_Transects_202408.csv", header = T, dec = ".", sep = ",")
 
 # Keep the exact depths, you will transform the ones of the transects
 
@@ -24,9 +24,9 @@ DEFI_Depths_Temps <- read.csv(file = "Environment/DEFI_loggers/082024/DEFI_Avera
 require(tidyverse); require (plyr); require (reshape); require (ggplot2); require (ggrepel); require (dplyr); require(RColorBrewer); 
 
 # Open the data
-data_bm_2022 <- read.csv(file = "Bleaching/data_bm_2022.csv", header = T, dec = ".", sep = ",")
+data_bm_2022 <- read.csv(file = "Data/Bleaching/data_bm_2022.csv", header = T, dec = ".", sep = ",")
 
-data_bm_2024 <- read.csv(file = "Bleaching/data_bm_2024.csv", header = T, dec = ".", sep = ",")
+data_bm_2024 <- read.csv(file = "Data/Bleaching/data_bm_2024.csv", header = T, dec = ".", sep = ",")
  
 # For 2022, Surveys conducted on August 1, 2 and 4 (Chung et al 2024 Coral Reefs)
 # For 2024, Surveys conducted on August 2024
@@ -189,8 +189,8 @@ summary (Bayes0_Depth)
 # Kept the same parameters as for the other models
 # Increasing Depth decreases bleaching status! 
 # Converges super fast, which is a good sign
-save(Bayes0_Depth, file="Bayesian_Outputs/Bayes0_Depth.RData")
-load("Bayesian_Outputs/Bayes0_Depth.RData")
+save(Bayes0_Depth, file="Data/Bayesian_Outputs/Bayes0_Depth.RData")
+load("Data/Bayesian_Outputs/Bayes0_Depth.RData")
 
 
 # 1st just temperatures:
@@ -198,8 +198,8 @@ Bayes1_Temp <- brms::brm(Status ~ 1 + Temperature + Site + (1 + Temperature | Sp
 summary (Bayes1_Temp)
 # Interp:
 # Converged with no divergences
-save(Bayes1_Temp, file="Bayesian_Outputs/Bayes1_Temp.RData")
-load("Bayesian_Outputs/Bayes1_Temp.RData")
+save(Bayes1_Temp, file="Data/Bayesian_Outputs/Bayes1_Temp.RData")
+load("Data/Bayesian_Outputs/Bayes1_Temp.RData")
 
 # 2nd model, temperatures and depth together!
 Bayes2_Temp_Depth <- brms::brm(Status ~ 1 + Temperature + Site + Depth + (1 + Temperature | Species), data = data_bm_bleaching_temp, family = bernoulli(link = "logit"),control = list(max_treedepth = 19, adapt_delta = 0.99), chains = 2, cores = 2, iter = 9000, warmup = 3000, backend = "cmdstanr", threads = 1)
@@ -211,8 +211,8 @@ summary (Bayes2_Temp_Depth)
 # Increasing Depth increases likelihood of bleaching... not significant but this is wrong!! Be careful!
 # Likely because they are highly correlated. 
 # I don't like that model... Keep in mind!
-save(Bayes2_Temp_Depth, file="Bayesian_Outputs/Bayes2_Temp_Depth.RData")
-load("Bayesian_Outputs/Bayes2_Temp_Depth.RData")
+save(Bayes2_Temp_Depth, file="Data/Bayesian_Outputs/Bayes2_Temp_Depth.RData")
+load("Data/Bayesian_Outputs/Bayes2_Temp_Depth.RData")
 
 
 # 3rd model, trying to keep temperatures and depth together!
@@ -228,8 +228,8 @@ summary (Bayes3_Temp_Depth)
 # Temp is not significant
 # Depth is not significant
 # The differences between sites are not significant either
-save(Bayes3_Temp_Depth, file="Bayesian_Outputs/Bayes3_Temp_Depth.RData")
-load("Bayesian_Outputs/Bayes3_Temp_Depth.RData")
+save(Bayes3_Temp_Depth, file="Data/Bayesian_Outputs/Bayes3_Temp_Depth.RData")
+load("Data/Bayesian_Outputs/Bayes3_Temp_Depth.RData")
 
 
 # 4th model, very similar to 3 but the other way around 
@@ -239,8 +239,8 @@ summary (Bayes4_Depth_Temp)
 # Interp:
 # Same problems as above! 
 # Don't like that model
-save(Bayes4_Depth_Temp, file="Bayesian_Outputs/Bayes4_Depth_Temp.RData")
-load("Bayesian_Outputs/Bayes4_Depth_Temp.RData")
+save(Bayes4_Depth_Temp, file="Data/Bayesian_Outputs/Bayes4_Depth_Temp.RData")
+load("Data/Bayesian_Outputs/Bayes4_Depth_Temp.RData")
 
 
 # the best models are: Bayes0_Depth and Bayes1_Temp
@@ -314,14 +314,14 @@ fig_5_a <- plot(ce, plot = FALSE)[[1]] +
   scale_x_continuous(name ="Temperature (ºC)", breaks = seq(24.4, 31.6, by = 0.6)) +
   labs(x = "Temperature (ºC)",  y = "Bleaching probability",  title = "0 = Pigmented, 1 = Bleached") + theme_classic()
 fig_5_a
-ggsave("Figure_Outputs/fig_5_a.pdf", fig_5_a, width = 5, height = 4)
+ggsave("Data/Figure_Outputs/fig_5_a.pdf", fig_5_a, width = 5, height = 4)
 
 
 # plot conditional effects for Site as discrete variable
 fig_5_e <- plot(ce, plot = FALSE)[[2]] + 
   labs(x = "Site",  y = "Bleaching probability") + theme_classic() 
 fig_5_e
-ggsave("Figure_Outputs/fig_4_e.pdf", fig_5_e, width = 5, height = 3.5)
+ggsave("Data/Figure_Outputs/fig_4_e.pdf", fig_5_e, width = 5, height = 3.5)
 
 # Again TPC a bit more bleaching, probably because the site has more corals 
 # If you use narrower intervals, these differentiate!
@@ -362,7 +362,7 @@ fig_5_c <- ggplot(ce_Site, aes(x = Temperature, y = estimate__, colour = Site, f
   theme_classic() +
   theme(strip.background = element_blank(), legend.position = "none", legend.title = element_blank())
 fig_5_c
-ggsave("Figure_Outputs/fig_5_c.pdf", fig_5_c, width = 5, height = 2)
+ggsave("Data/Figure_Outputs/fig_5_c.pdf", fig_5_c, width = 5, height = 2)
 
 
 
@@ -517,7 +517,7 @@ fig_5_b <- plot(ce_depth, plot = FALSE)[[1]] +
   scale_x_continuous(name ="Depth (m)", limits = c(1,5.5),breaks = seq(0, 6, by = 0.5)) +
   labs(x = "Depth (m)",  y = "Bleaching probability",  title = "") + theme_classic()
 fig_5_b
-ggsave("Figure_Outputs/fig_5_b.pdf", fig_5_b, width = 5, height = 4)
+ggsave("Data/Figure_Outputs/fig_5_b.pdf", fig_5_b, width = 5, height = 4)
 
 
 # Prepare fully crossed conditions of the conditional effects
@@ -542,7 +542,7 @@ fig_5_d <- ggplot(ce_Site_Depth, aes(x = Depth, y = estimate__, colour = Site, f
   theme_classic() +
   theme(strip.background = element_blank(), strip.text = element_blank(), legend.position = "none", legend.title = element_blank())
 fig_5_d
-ggsave("Figure_Outputs/fig_5_d.pdf", fig_5_d, width = 5, height = 2)
+ggsave("Data/Figure_Outputs/fig_5_d.pdf", fig_5_d, width = 5, height = 2)
 
 
 
@@ -608,7 +608,7 @@ fig_6_a <- ggplot(ref_data_fitted_Depth, aes(x = Prob, y = Species, fill = Speci
   xlab ("Bleaching probability") + ylab ("")+
   theme_bw() +  theme(legend.position="none")
 fig_6_a
-ggsave("Figure_Outputs/fig_6_a.pdf", fig_6_a, width = 4, height = 4)
+ggsave("Data/Figure_Outputs/fig_6_a.pdf", fig_6_a, width = 4, height = 4)
 
 
 # Make the figure of Prob vs Depth (instead of Temperatures) by Species with Depth 
@@ -666,7 +666,7 @@ fig_6_b <- ggplot(ce_depth_Species, aes(x = Depth, y = estimate__, fill = Specie
   theme(strip.background = element_blank(), 
         legend.position = "none", strip.text = element_text(size = 6), axis.text = element_text(size = 7))
 fig_6_b
-ggsave("Figure_Outputs/fig_6_b.pdf", fig_6_b, width = 5.5, height = 4)
+ggsave("Data/Figure_Outputs/fig_6_b.pdf", fig_6_b, width = 5.5, height = 4)
 
 # mean Values for MS
 mean_values2 <- aggregate (estimate__ ~ Species, data = ce_depth_Species, mean)

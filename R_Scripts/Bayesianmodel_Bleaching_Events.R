@@ -13,9 +13,9 @@ require(tidyverse); require (plyr); require (reshape); require (ggplot2); requir
 rm (list = ls()) 
 
 # Open the data
-data_bm_2022 <- read.csv(file = "Bleaching/data_bm_2022.csv", header = T, dec = ".", sep = ",")
+data_bm_2022 <- read.csv(file = "Data/Bleaching/data_bm_2022.csv", header = T, dec = ".", sep = ",")
 
-data_bm_2024 <- read.csv(file = "Bleaching/data_bm_2024.csv", header = T, dec = ".", sep = ",")
+data_bm_2024 <- read.csv(file = "Data/Bleaching/data_bm_2024.csv", header = T, dec = ".", sep = ",")
 
 # For 2022, Surveys conducted on August 1, 2 and 4 (Chung et al 2024 Coral Reefs)
 # For 2024, Surveys conducted on August 2024
@@ -130,8 +130,8 @@ summary (fit_bayes_bleachings)
 # It converged without priors and with relatively low adapt delta and max tree depth
 # Depth significant decrease (-0.91, l-95% CI = -1.40    u-95% = -0.52) of Status 1 (which is bleaching)
 # Sharp and TPC have more bleaching than Bluff
-save(fit_bayes_bleachings, file="Bayesian_Outputs/fit_bayes_bleachings.RData")
-load("Bayesian_Outputs/fit_bayes_bleachings.RData")
+save(fit_bayes_bleachings, file="Data/Bayesian_Outputs/fit_bayes_bleachings.RData")
+load("Data/Bayesian_Outputs/fit_bayes_bleachings.RData")
 
 # 2nd model
 # Just run an extra line to compare across years. Year as a fixed effect
@@ -141,8 +141,8 @@ fit_bayes_bleachings2 <- brms::brm(Status ~ 1 + Depth + Site + Year + (1 + Depth
 summary (fit_bayes_bleachings2)
 # Interp:
 # Same conclusions and we can also observe how Year 2024 had a higher bleaching than Year 2022
-save(fit_bayes_bleachings2, file="Bayesian_Outputs/fit_bayes_bleachings2.RData")
-load("Bayesian_Outputs/fit_bayes_bleachings2.RData")
+save(fit_bayes_bleachings2, file="Data/Bayesian_Outputs/fit_bayes_bleachings2.RData")
+load("Data/Bayesian_Outputs/fit_bayes_bleachings2.RData")
 
 # Compare the two models: 
 library(loo)
@@ -183,7 +183,7 @@ fig_2_d <- plot(ce, plot = FALSE)[[1]] +
   scale_x_continuous(name ="Depth (discrete levels)", limits=c(1,3), breaks = c(1,2,3)) +
   labs(x = "Depth discrete levels",  y = "Bleaching probability",  title = "0 = Pigmented, 1 = Bleached") + theme_classic()
 fig_2_d 
-ggsave("Figure_Outputs/fig_2_d.pdf", fig_2_d, width = 3, height = 2.5)
+ggsave("Data/Figure_Outputs/fig_2_d.pdf", fig_2_d, width = 3, height = 2.5)
 
 
 # plot conditional effects for Site as discrete variable
@@ -244,7 +244,7 @@ fig_2_e <- ggplot(data = ce_Year, aes(x = Year, y = estimate__)) + # colour = Si
   theme_classic() +
   theme(strip.background = element_blank(),legend.position = "bottom",legend.title = element_blank()) 
 fig_2_e
-ggsave("Figure_Outputs/fig_2_e.pdf", fig_2_e, width = 6, height = 5)
+ggsave("Data/Figure_Outputs/fig_2_e.pdf", fig_2_e, width = 6, height = 5)
 
 
 

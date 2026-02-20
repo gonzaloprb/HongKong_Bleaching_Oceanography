@@ -23,18 +23,14 @@ library(ggplot2); library (ggpmisc)
 library(RColorBrewer)
 library (hms); library (lubridate)
 library (dplyr)
-
-
-# Choose directory where you have CSVs and function reading
-setwd("~/Documents/AAASea_Science/AAA_Post_Doc_Alex_Wyatt/Hong_Kong_2024_Bleaching/Environmental_Data/DEFI_loggers/082024/")
-
+ 
 
 #########
 # Open CSV files from 2024-08-09 - Tung Ping Chau and Hoi Ha Wan (= Gruff Head)
-df_Depth <- read.csv("DEFI2-D20_20240809093000_0ADO005.csv", header = T, dec = ".", sep = ",", skip = 25)
-df_Light <- read.csv("DEFI2-L_20240809093000_0AAO032.csv", header = T, dec = ".", sep = ",", skip = 25)
+df_Depth <- read.csv(file = "Data/Environment/DEFI_loggers/082024/DEFI2-D20_20240809093000_0ADO005.csv", header = T, dec = ".", sep = ",", skip = 25)
+df_Light <- read.csv("Data/Environment/DEFI_loggers/082024/DEFI2-L_20240809093000_0AAO032.csv", header = T, dec = ".", sep = ",", skip = 25)
 # Problem in light file, it stopped registering light at "2024/08/09 11:19:47"
-df_Temp <- read.csv("DEFI2-T_20240809093000_0AAF045.csv", header = T, dec = ".", sep = ",", skip = 24)
+df_Temp <- read.csv("Data/Environment/DEFI_loggers/082024/DEFI2-T_20240809093000_0AAF045.csv", header = T, dec = ".", sep = ",", skip = 24)
 
 
 df_all <- merge (df_Depth[,c(1,3)], df_Light [,c(1,2)], by = "TimeStamp", all = T)
@@ -330,9 +326,9 @@ gonzalo_sec_axis_plot("KLW_1_2m",KLW_1_2m)
 # rm (list = ls ())
 
 # Open CSV files for 2024-08-05, for Long Ke Wan, Bluff and Sharp
-df_Depth <- read.csv("DEFI2-D20_20240805093000_0ADO005.csv", header = T, dec = ".", sep = ",", skip = 25)
-df_Light <- read.csv("DEFI2-L_20240805093000_0AAO032.csv", header = T, dec = ".", sep = ",", skip = 25)
-df_Temp <- read.csv("DEFI2-T_20240805093000_0AAF045.csv", header = T, dec = ".", sep = ",", skip = 24)
+df_Depth <- read.csv("Data/Environment/DEFI_loggers/082024/DEFI2-D20_20240805093000_0ADO005.csv", header = T, dec = ".", sep = ",", skip = 25)
+df_Light <- read.csv("Data/Environment/DEFI_loggers/082024/DEFI2-L_20240805093000_0AAO032.csv", header = T, dec = ".", sep = ",", skip = 25)
+df_Temp <- read.csv("Data/Environment/DEFI_loggers/082024/DEFI2-T_20240805093000_0AAF045.csv", header = T, dec = ".", sep = ",", skip = 24)
 
 
 
@@ -708,9 +704,9 @@ gonzalo_sec_axis_plot("SI_1_2m",SI_1_2m)
 # rm (list = ls ())
 
 # Open CSV files for 2024-08-06
-df_Depth <- read.csv("DEFI2-D20_20240806093000_0ADO005.csv", header = T, dec = ".", sep = ",", skip = 25)
-df_Light <- read.csv("DEFI2-L_20240806093000_0AAO032.csv", header = T, dec = ".", sep = ",", skip = 25)
-df_Temp <- read.csv("DEFI2-T_20240806093000_0AAF045.csv", header = T, dec = ".", sep = ",", skip = 24)
+df_Depth <- read.csv("Data/Environment/DEFI_loggers/082024/DEFI2-D20_20240806093000_0ADO005.csv", header = T, dec = ".", sep = ",", skip = 25)
+df_Light <- read.csv("Data/Environment/DEFI_loggers/082024/DEFI2-L_20240806093000_0AAO032.csv", header = T, dec = ".", sep = ",", skip = 25)
+df_Temp <- read.csv("Data/Environment/DEFI_loggers/082024/DEFI2-T_20240806093000_0AAF045.csv", header = T, dec = ".", sep = ",", skip = 24)
 
 
 
@@ -895,16 +891,15 @@ all_sites_data <- rbind (BI,BI_2,SI,SI_2,TPC)
 all_sites_data <- all_sites_data %>% filter(Depth > 0) # Filtering surface data!
   
 # scatter plot of Depth vs Temp
-fig_4_f <- ggplot(data = all_sites_data, aes (x=Depth, y = Temp)) +
+fig_5_f <- ggplot(data = all_sites_data, aes (x=Depth, y = Temp)) +
   stat_poly_line() +
   stat_poly_eq(use_label(c("eq", "R2")), label.y = 33, label.x = 3) +
   geom_point(aes (x=Depth, y = Temp, colour = Site),size = 0.1, alpha = 0.3)  +  
   scale_color_manual(values = c("Green", "Orange", "Red")) +
   xlab("Depth (m)") + ylab("Temperatures (ºC)")+ 
   theme_bw() + theme(legend.position = "none")
-fig_4_f
-ggsave("~/Documents/AAASea_Science/AAA_Post_Doc_Alex_Wyatt/Hong_Kong_2024_Bleaching/Figure_Outputs/fig_4_f.pdf", fig_4_f, width = 3, height = 3)
-ggsave("~/Documents/AAASea_Science/AAA_Post_Doc_Alex_Wyatt/Hong_Kong_2024_Bleaching/Figure_Outputs/fig_4_f.png", fig_4_f, width = 3, height = 3)
+fig_5_f
+ggsave("Data/Figure_Outputs/fig_5_f.pdf", fig_4_f, width = 3, height = 3)
 
 
 # Pearson correlation: 
@@ -922,101 +917,5 @@ TPCIsland <- all_sites_data %>% filter(Site == "Tung Ping Chau")
 cor.test (TPCIsland$Depth, TPCIsland$Temp)
 
 ##### THE END 
-
-
-####################################### 
-
-
-
-
-
-# Some extra unnecessary graphs!
-
-# Secondary axis plot: 
-
-# Calculate the range of Depth and Temp
-depth_range <- max(BI$Depth) - min(BI$Depth)
-temp_range <- max(BI$Temp) - min(BI$Temp)
-
-# Calculate the scale factor
-scale_factor <- depth_range / temp_range
-print(scale_factor)
-
-
-ggplot(BI, aes(x = Date_Time)) +
-  geom_line(aes(y = Depth, color = "Depth")) +
-  geom_line(aes(y = Temp, color = "Temp")) +
-  # Invert the y-axis for Depth
-  scale_y_reverse(name = "Depth (m)", sec.axis = sec_axis(~ . / scale_factor, name = "Temp (°C)")) +
-  # Customize colors
-  scale_color_manual(values = c("blue", "red")) +
-  # Labels and title
-  labs(x = "Date_Time", y = "Depth (m)", title = "Depth and Temperature Over Time", color = "Legend") +
-  # Theme adjustments
-  theme_bw() 
-
-
-
-
-ggplot(BI, aes(x = Date_Time)) +
-  geom_point(aes(y = -Depth), color = "blue", size = 0.2) +  # Primary y-axis
-  geom_point(aes(y = -(Temp - 24) * (6 / 8)), color = "red", size = 0.2) +  # Secondary y-axis
-  scale_y_continuous(name = "Depth (Blue)", sec.axis = sec_axis( ~ . * (8 / 6) + 24, name = "Temperature (red)")) +  # Secondary axis transformation
-  theme_bw() 
-
-ymax <- 0
-scaleRight <- max(BI$Temp)/ymax
-
-
-ggplot(BI, aes(x = Date_Time)) +
-  geom_point(aes(y = -Depth), color = "blue", size = 0.2) +  # Primary y-axis
-  geom_point(aes(y = -(Temp - 24) * (6 / 8)), color = "red", size = 0.2) +  # Secondary y-axis
-  scale_y_continuous(name = "Depth (Blue)", sec.axis = sec_axis( (-1) ~ . * (8 / 6) + 24, name = "Temperature (red)")) +  # Secondary axis transformation
-  theme_bw() 
-
-
-ggplot(BI, aes(x = Date_Time)) +
-  geom_point(aes(y = Depth), color = "blue", size = 0.2) +
-  geom_point(aes(y = (Temp - 24) * (6 / 8)), color = "red", size = 0.2) +
-  scale_y_continuous(
-    name = "Depth (blue)",
-    sec.axis = sec_axis(
-      ~ (. - 2.768) * (5.960 - 1.460) / (32.04 - 24.27) + 1.460,
-      name = "Temperature (red)"
-    )
-  ) +
-  theme_bw() 
-
-
-
-ggplot(BI, aes(x = Date_Time)) +
-  geom_point(aes(y = Depth), color = "blue", size = 0.2) +  # Primary y-axis
-  geom_point(aes(y = (Temp - 24) * (6 / 8)), color = "red", size = 0.2) +  # Secondary y-axis
-  scale_y_reverse(name = "Depth (blue)",
-                     sec.axis = sec_axis(~ . * (8 / 6) + 24, name = "Temperature (red)")) +  # Secondary axis transformation
-  scale_y_reverse() + theme_bw()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

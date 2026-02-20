@@ -10,9 +10,9 @@ require(tidyverse); require (plyr); require (reshape); require (ggplot2); requir
 rm (list = ls()) 
 
 # Open the data
-data_2022 <- read.csv(file = "Bleaching/Chung_data/data_extract.csv", header = T, dec = ".", sep = ",")
+data_2022 <- read.csv(file = "Data/Bleaching/Chung_data/data_extract.csv", header = T, dec = ".", sep = ",")
 
-data_coverage_2022 <- read.csv(file = "Bleaching/Chung_data/coverage_extract.csv", header = T, dec = ".", sep = ",")
+data_coverage_2022 <- read.csv(file = "Data/Bleaching/Chung_data/coverage_extract.csv", header = T, dec = ".", sep = ",")
 
 # data_coverage_2022 and data_2022 are the same! 
 rm (data_coverage_2022)
@@ -202,8 +202,8 @@ summary (fit_bayes_2022)
 # Depth significant decrease (-2.93, l-95% CI = -5.07    u-95% = -1.27) of Status 1 (which is bleaching), way more marked than with my 2024 data
 # Sharp and TPC don't necessarily have more bleaching than Bluff
 # No need to run extra models because this formula is the one we keep for the 2024 data. 
-save(fit_bayes_2022, file="Bayesian_Outputs/fit_bayes_2022.RData")
-load("Bayesian_Outputs/fit_bayes_2022.RData")
+save(fit_bayes_2022, file="Data/Bayesian_Outputs/fit_bayes_2022.RData")
+load("Data/Bayesian_Outputs/fit_bayes_2022.RData")
 
 # Analyse the model
 # Check convergence 
@@ -358,7 +358,7 @@ ggplot(ref_data_fitted2, aes(x = value, y = Species)) + # fill = Species
 data_bm_2022 <- data_2022_Binary
 data_bm_2022$Year <- 2022
 
-write_csv(data_bm_2022, "Bleaching/data_bm_2022.csv")
+write_csv(data_bm_2022, "Data/Bleaching/data_bm_2022.csv")
 
 
 

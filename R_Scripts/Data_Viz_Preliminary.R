@@ -51,7 +51,7 @@ require(tidyverse); require (plyr); require (reshape); require (ggplot2); requir
 rm (list = ls())
 
 # Open the data
-data_survey <- read.csv(file = "Bleaching/Bleaching_Survey_final.csv", header = T, dec = ".", sep = ",")
+data_survey <- read.csv(file = "Data/Bleaching/Bleaching_Survey_final.csv", header = T, dec = ".", sep = ",")
 
 str(data_survey)
 summary(data_survey)
@@ -277,7 +277,7 @@ Fig_S4 <- ggplot(nb_colonies_species_sum, aes(x = Site, y = nb_colonies_species,
     plot.margin = margin(10, 10, 10, 10))                          
 Fig_S4
 
-ggsave("Figure_Outputs/Supplementary/Fig_S4.pdf", Fig_S4)
+ggsave("Data/Figure_Outputs/Supplementary/Fig_S4.pdf", Fig_S4)
 
 aggregate (nb_diversity ~  Site, nb_diversity, max)
 aggregate (nb_colonies ~  Site, nb_colonies, max)
@@ -523,7 +523,7 @@ Fig_S3 <- CC_NMDS_coordinates %>% ggplot() + theme_blank() +
     annotate(geom = 'text', label = paste("Stress =", round(total_NMDS$stress, 3)), x = -0.8, y = -0.35, hjust = 0, vjust = 0)
 Fig_S3
 
-ggsave("Figure_Outputs/Supplementary/Fig_S3.pdf", Fig_S3,width = 8, height = 6)
+ggsave("Data/Figure_Outputs/Supplementary/Fig_S3.pdf", Fig_S3,width = 8, height = 6)
 # width = 8.5, height = 6
 
 # Permanova adonis
@@ -894,7 +894,7 @@ fig_4 <- ggplot(resume_site_depth_status_2, aes(x = Bleaching.Time, y = Proporti
   theme(legend.position="bottom") 
 fig_4
 
-ggsave("Figure_Outputs/fig_4.pdf", fig_4, width = 8.5, height = 6)
+ggsave("Data/Figure_Outputs/fig_4.pdf", fig_4, width = 8.5, height = 6)
 # width = 6, height = 6
 
 # Some average values for MS and statistical tests During-After
@@ -1621,9 +1621,9 @@ fit_bayes_1 <- brms::brm(Status ~ 1 + Depth + (1 + Depth | Species) +  (1|Site),
 # Higher adapt delta means more conservative to avoid divergent transitions
 # I increased these values until getting a model convergence without errors or Warnings. 
 # Save the output
-save(fit_bayes_1, file="Bayesian_Outputs/fit_bayes_1.RData")
+save(fit_bayes_1, file="Data/Bayesian_Outputs/fit_bayes_1.RData")
 # Load the output of the model straight
-load("Bayesian_Outputs/fit_bayes_1.RData") 
+load("Data/Bayesian_Outputs/fit_bayes_1.RData") 
 
 # Interpretation for the first model, not bernoulli
 summary (fit_bayes_1)
@@ -1676,9 +1676,9 @@ summary (fit_bayes_2)
 # Interpretation: 
 # Convergence is okay
 # With Depth (Estimate = -0.74), the probability of having Status 1 (= which is bleaching) decreases
-save(fit_bayes_2, file="Bayesian_Outputs/fit_bayes_2.RData")
+save(fit_bayes_2, file="Data/Bayesian_Outputs/fit_bayes_2.RData")
 # Load the output of the model straight
-load("Bayesian_Outputs/fit_bayes_2.RData") 
+load("Data/Bayesian_Outputs/fit_bayes_2.RData") 
 
 
 # Third model, still using Bernoulli
@@ -1695,9 +1695,9 @@ summary (fit_bayes_3)
 # Sites are similar. TPC estimate is + (1.54), it means has a positive correlation towards bleaching compared with Bluff (the reference sie)
 # However, the l-95% and u-95% intervals make it not significant
 # Differentiating by site is not that necessary / important! Here it does not consider how for each site, it decreases with depth
-save(fit_bayes_3, file="~/Documents/AAASea_Science/AAA_Post_Doc_Alex_Wyatt/Hong_Kong_2024_Bleaching/Bayesian_Outputs/fit_bayes_3.RData")
+save(fit_bayes_3, file="Data/Bayesian_Outputs/fit_bayes_3.RData")
 # Load the output of the model straight
-load("Bayesian_Outputs/fit_bayes_3.RData") 
+load("Data/Bayesian_Outputs/fit_bayes_3.RData") 
 
 
 # 4th model to compare across sites more explicitly by depth
@@ -1746,8 +1746,8 @@ summary (fit_bayes_4)
 # The decreases in Sharp and TPC are not significant compared to Bluff. 
 # The sites do not have a significant difference with Bluff
 # All sites are behaving more or less equally, decreasing with depth but not having spatial significant differences
-save(fit_bayes_4, file="Bayesian_Outputs/fit_bayes_4.RData")
-load("Bayesian_Outputs/fit_bayes_4.RData")
+save(fit_bayes_4, file="Data/Bayesian_Outputs/fit_bayes_4.RData")
+load("Data/Bayesian_Outputs/fit_bayes_4.RData")
 
 
 
@@ -1763,8 +1763,8 @@ summary (fit_bayes_5)
 # Depth significant decrease of Status 1 (which is bleaching)
 # Sharp and TPC have more bleaching than Bluff. Order is Bluff, Sharp and TPC
 # I like this model!
-save(fit_bayes_5, file="Bayesian_Outputs/fit_bayes_5.RData")
-load("Bayesian_Outputs/fit_bayes_5.RData")
+save(fit_bayes_5, file="Data/Bayesian_Outputs/fit_bayes_5.RData")
+load("Data/Bayesian_Outputs/fit_bayes_5.RData")
 
 # 6th model
 # This formula needs priors
@@ -1798,8 +1798,8 @@ summary (fit_bayes_6)
 # Interp: 
 # Fixed effcts are not significant
 # Too high tree depth and adapt delta
-save(fit_bayes_6, file="Bayesian_Outputs/fit_bayes_6.RData")
-load("Bayesian_Outputs/fit_bayes_6.RData")
+save(fit_bayes_6, file="Data/Bayesian_Outputs/fit_bayes_6.RData")
+load("Data/Bayesian_Outputs/fit_bayes_6.RData")
 # This model is actually not so good... Still divergence so I had to increase again the max_treedepth and the adapt_delta
 
 
@@ -1861,7 +1861,7 @@ coef(fit_bayes_2)
 
 # "fit_bayes_5" is the best model ever
 
-load("Bayesian_Outputs/fit_bayes_5.RData")
+load("Data/Bayesian_Outputs/fit_bayes_5.RData")
 final_bi_model <- fit_bayes_5
 
 # Check convergence of the model again
@@ -2013,7 +2013,7 @@ ggplot(ref_data_fitted2, aes(x = Prob, y = Species)) + # fill = Species
 data_bm_2024 <- data_bm2
 data_bm_2024$Year <- 2024
 
-write_csv(data_bm_2024, "Bleaching/data_bm_2024.csv")
+write_csv(data_bm_2024, "Data/Bleaching/data_bm_2024.csv")
 
 
 
