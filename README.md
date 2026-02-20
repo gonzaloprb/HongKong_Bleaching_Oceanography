@@ -25,7 +25,7 @@ subtropical system. Coral Reefs. https://doi.org/10.1007/s00338-026-02835-w
 
 ### Data/Environment Folder:
 Quick info
-S1 Tung Ping Chau,  S18 is Bluff Island, S21 is Sharp Island
+S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 
 
 ### CTD_Transects: 
