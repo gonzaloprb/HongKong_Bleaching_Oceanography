@@ -57,13 +57,14 @@ S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 ** Sea Surface Satellite Data from the Coral Temp: https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php
 ** Data file is "HongKong_CoralTemp_0p25deg.mat" in a Matlab format (.mat)
 
-The R_Scripts are: 
+The R_Scripts are:
+(To be completed)
 *File: Bayesianmodel_Bleaching_Events10012026.R
 ** Contains the Bayesian Models for the 2022 and 2024 Bleaching Events. It generates 
 
 
 The Matlab scripts are: 
-
+(To be completed)
 
 
 
