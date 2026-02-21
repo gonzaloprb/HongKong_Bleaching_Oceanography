@@ -1,6 +1,9 @@
-# Chung data from 2022 bleaching. 
+# Chung data from 2022 bleaching event. 
 
-# Chung TH, Dellisanti W, Lai KP, Wu J, Qiu JW, Chan LL (2024) Local conditions modulated the effects of marine heatwaves on coral bleaching in subtropical Hong Kong waters. Coral Reefs 43(5):1235–1247. https:// doi. org/ 10. 1007/ S00338- 024- 02533-5
+# Reference: Chung TH, Dellisanti W, Lai KP, Wu J, Qiu JW, Chan LL (2024) Local conditions modulated the effects of marine heatwaves on coral bleaching in subtropical Hong Kong waters. Coral Reefs 43(5):1235–1247. https://doi.org/10.1007/S00338-024-02533-5
+
+# Analyses and extract data from Chung TH, et al (2024) Local conditions modulated the effects of marine heatwaves on coral bleaching in subtropical Hong Kong waters. Coral Reefs 43(5):1235–1247. https://doi.org/10.1007/S00338-024-02533-5
+# It generates the "data_bm_2022.csv" later used in the Bayesian model
 
 # Surveys conducted on August 1, 2 and 4 2022
 
