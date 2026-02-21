@@ -39,8 +39,8 @@ S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 ** The November "112024" data was not used for the Bayesian model or the analysis
 
 ### Fixed_Temp_Loggers
-** Pending to be uploaded (file size problems)
 * miniDOT
+** Pending to be uploaded (file size problems)
 ** These data contain temperatures and oxygen from fixed loggers (PME) at different sites and depths
 ** They contain data from 20240428 to post bleaching surveys at 20241105
 ** Data is in a Matlab file format (.mat)
@@ -48,7 +48,7 @@ S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 ** miniDOT loggers were not deployed at S1 Tung Ping Chau
 
 
-### SBE
+* SBE
 ** Pending to be uploaded (file size problems)
 ** These data contain temperatures from fixed loggers (Seabirds) at different sites and depths
 ** They contain data from 20201104 to post bleaching surveys at 20241106
@@ -72,11 +72,11 @@ S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 ** Analyses and extract data from Chung TH, et al (2024) Local conditions modulated the effects of marine heatwaves on coral bleaching in subtropical Hong Kong waters. Coral Reefs 43(5):1235–1247. https://doi.org/10.1007/S00338-024-02533-5
 ** It generates the "data_bm_2022.csv" later used in the Bayesian model
 
-*File: Bayesianmodel_Bleaching_Events.R
+* File: Bayesianmodel_Bleaching_Events.R
 ** Contains the Bayesian Models for the 2022 and 2024 Bleaching Events comparison. 
 ** It generates Fig 2d and Fig 2e
 
-*File: Read_Temps_Defi_Bayesian_Model.R
+* File: Read_Temps_Defi_Bayesian_Model.R
 ** Bayesian modelling of bleaching data according to the mounted DEFI loggers
 ** It generates the Bayesian statistical results
 ** It generates Fig 5 and Fig 6
