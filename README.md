@@ -57,65 +57,94 @@ They contain data from 20240428 to post bleaching surveys at 20241105
 
 Data is in a Matlab file format (.mat)
 
-S21 is Sharp Island, S18 is Bluff Island
-
 miniDOT loggers were not deployed at S1 Tung Ping Chau
 
 * SBE
-** Available at https://doi.org/10.5061/dryad.ht76hdrxc
-** These data contain temperatures from fixed loggers (Seabirds) at different sites and depths
-** They contain data from 20201104 to post bleaching surveys at 20241106
-** Data is in a Matlab file format (.mat)
-** S21 is Sharp Island, S18 is Bluff Island and S1 is Tung Ping Chau
+Available at https://doi.org/10.5061/dryad.ht76hdrxc
+
+These data contain temperatures from fixed loggers (Seabirds) at different sites and depths
+
+They contain data from 20201104 to post bleaching surveys at 20241106
+
+Data is in a Matlab file format (.mat)
+
 
 ### Satellite
-** Available at https://doi.org/10.5061/dryad.ht76hdrxc
-** Sea Surface Satellite Data from the Coral Temp: https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php
-** Data file is "HongKong_CoralTemp_0p25deg.mat"
+Available at https://doi.org/10.5061/dryad.ht76hdrxc
+
+Sea Surface Satellite Data from the Coral Temp: https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php
+
+Data file is "HongKong_CoralTemp_0p25deg.mat"
 
 ## The R_Scripts are:
 * File: Data_Viz_Preliminary.R
-** This is a massive script mainly for Data exploration and Visualisations
-** This script includes frequentist statistics as well as the Hurdle models
-** It generates Fig. 4 and Fig. S3 and Fig. S4
-** It generates the "data_bm_2024.csv" later used in the Bayesian model
-** For the Bayesian models better to use Scripts: "Read_Temps_Defi_Bayesian_Model.R" and "Bayesianmodel_Bleaching_Events.R"
+
+This is a massive script mainly for Data exploration and Visualisations
+
+This script includes frequentist statistics as well as the Hurdle models
+
+It generates Fig. 4 and Fig. S3 and Fig. S4
+
+It generates the "data_bm_2024.csv" later used in the Bayesian model
+
+For the Bayesian models better to use Scripts: "Read_Temps_Defi_Bayesian_Model.R" and "Bayesianmodel_Bleaching_Events.R"
 
 * File: Data_Viz_Chung_Data_2022.R
-** Analyses and extract data from Chung TH, et al (2024) Local conditions modulated the effects of marine heatwaves on coral bleaching in subtropical Hong Kong waters. Coral Reefs 43(5):1235–1247. https://doi.org/10.1007/S00338-024-02533-5
-** It generates the "data_bm_2022.csv" later used in the Bayesian model
+
+Analyses and extract data from Chung TH, et al (2024) Local conditions modulated the effects of marine heatwaves on coral bleaching in subtropical Hong Kong waters. Coral Reefs 43(5):1235–1247. https://doi.org/10.1007/S00338-024-02533-5
+
+It generates the "data_bm_2022.csv" later used in the Bayesian model
 
 * File: Bayesianmodel_Bleaching_Events.R
-** Contains the Bayesian Models for the 2022 and 2024 Bleaching Events comparison. 
-** It generates Fig 2d and Fig 2e
+
+Contains the Bayesian Models for the 2022 and 2024 Bleaching Events comparison. 
+
+It generates Fig 2d and Fig 2e
 
 * File: Read_Temps_Defi_Bayesian_Model.R
-** Bayesian modelling of bleaching data according to the mounted DEFI loggers
-** It generates the Bayesian statistical results
-** It generates Fig 5 and Fig 6
-** The best models are Bayes0_Depth and Bayes1_Temp. These are analysed separately.
+
+Bayesian modelling of bleaching data according to the mounted DEFI loggers
+
+It generates the Bayesian statistical results
+
+It generates Fig 5 and Fig 6
+
+The best models are Bayes0_Depth and Bayes1_Temp. These are analysed separately.
 
 ## The Matlab scripts are: 
 * File: CTD_Reading_Plots_CSV_Casts_Gon.m
-** It generates the Contour plots of the 11 CTD stations
-** It generates Fig 3
-** It runs on the Data/Environment/CTD_Transects
+
+It generates the Contour plots of the 11 CTD stations
+
+It generates Fig 3
+
+It runs on the Data/Environment/CTD_Transects
 
 * File: Temp_Loggers_Read.m
-** It analyses the miniDOT and Seabird fixed logger temperatures
-** It generates Fig 2 b and c
-** It generates data for Table 1
-** The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
+
+It analyses the miniDOT and Seabird fixed logger temperatures
+
+It generates Fig 2 b and c
+
+It generates data for Table 1
+
+The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
 
 * File: Plot_LongTermSST_Gon.m
-** It analyses the Satellite data from https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php
-** It generates Fig 2 a
-** The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
+
+It analyses the Satellite data from https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php
+
+It generates Fig 2 a
+
+The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
 
 * File: Plot_GSHHS_coastline_Gon_Fastcode.m
-** It plots the SST map
-** It generates Fig 1
-** The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
+
+It plots the SST map
+
+It generates Fig 1
+
+The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
 
 
 ## Final comment: 
