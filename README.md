@@ -131,6 +131,14 @@ It generates data for Table 1
 
 The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
 
+* File: Plot_GSHHS_coastline_Gon_Fastcode.m
+
+It plots the SST map
+
+It generates Fig 1
+
+The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
+
 * File: Plot_LongTermSST_Gon.m
 
 It analyses the Satellite data from https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php
@@ -139,13 +147,7 @@ It generates Fig 2 a
 
 The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
 
-* File: Plot_GSHHS_coastline_Gon_Fastcode.m
 
-It plots the SST map
-
-It generates Fig 1
-
-The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
 
 
 ## Final comment: 
