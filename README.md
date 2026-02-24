@@ -17,37 +17,49 @@ Raw data from the bleaching surveys during August 2024, at the peak of the bleac
 Please note that the transect surveys were conducted at multi-species-genus levels initially, but that later analysis and results were transformed at genus level only. 
 
 * File: data_bm_2022.csv
-** Bleaching data from 2022 (Chung et al 2024 Coral Reefs https:// doi. org/ 10. 1007/ S00338- 024- 02533-5). Processed with "Data_Viz_Chung_Data_2022.R" from original data files inside Bleaching/Chung_data/.  
+
+Bleaching data from 2022 (Chung et al 2024 Coral Reefs https:// doi. org/ 10. 1007/ S00338- 024- 02533-5). Processed with "Data_Viz_Chung_Data_2022.R" from original data files inside Bleaching/Chung_data/.  
 
 * File: data_bm_2024.csv
-** Bleaching data from 2024. Created from the original Bleaching_Survey_05022025.csv and the Script "Data_Viz_Preliminary.R"
+
+Bleaching data from 2024. Created from the original Bleaching_Survey_05022025.csv and the Script "Data_Viz_Preliminary.R"
 
 
 
 ### Data/Environment Folder:
-Quick info
+Quick info:
 S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 
 
 ### Data/Environment/CTD_Transects: 
-** Folders per Month/Year Cast "Oct2022", "May2022", "Aug2024", "Nov2024"
-** Each Folder contains the Date-Site and the 11 cast stations in a mat file (.mat)
+Folders per Month/Year Cast "Oct2022", "May2022", "Aug2024", "Nov2024"
+
+Each Folder contains the Date-Site and the 11 cast stations in a mat file (.mat)
 
 ### Data/Environment/DEFI_loggers
-** These are mounted loggers to the bleaching transect pole that monitored exact Depth, Temperature and Light at the actual coral levels
-** Two folders "082024" and "112024"
-** File of "DEFI_Average_Transects_202408.xlsx" contains the post-processed data
+These are mounted loggers to the bleaching transect pole that monitored exact Depth, Temperature and Light at the actual coral levels
+
+Two folders "082024" and "112024"
+
+File of "DEFI_Average_Transects_202408.xlsx" contains the post-processed data
+
 ** The raw data are in the form of DEFI2-L, DEFI-D20 and DEFI-T csv files
-** The November "112024" data was not used for the Bayesian model or the analysis
+
+The November "112024" data was not used for the Bayesian model or the analysis
 
 ### Fixed_Temp_Loggers
 * miniDOT
-** Available at https://doi.org/10.5061/dryad.ht76hdrxc
-** These data contain temperatures and oxygen from fixed loggers (PME) at different sites and depths
-** They contain data from 20240428 to post bleaching surveys at 20241105
-** Data is in a Matlab file format (.mat)
-** S21 is Sharp Island, S18 is Bluff Island
-** miniDOT loggers were not deployed at S1 Tung Ping Chau
+Available at https://doi.org/10.5061/dryad.ht76hdrxc
+
+These data contain temperatures and oxygen from fixed loggers (PME) at different sites and depths
+
+They contain data from 20240428 to post bleaching surveys at 20241105
+
+Data is in a Matlab file format (.mat)
+
+S21 is Sharp Island, S18 is Bluff Island
+
+miniDOT loggers were not deployed at S1 Tung Ping Chau
 
 * SBE
 ** Available at https://doi.org/10.5061/dryad.ht76hdrxc
