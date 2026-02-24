@@ -7,6 +7,8 @@ Article title: Shallow seasonal stratification ameliorates coral bleaching durin
 Citation: Pérez-Rosales G., Pei, Y.-D., Bennet-Williams J., King T.B., Rummel M., Chung T.H., Wyatt A.S.J.W. (2026) Shallow seasonal stratification ameliorates coral bleaching during record‑breaking marine heatwaves in a marginal subtropical system. Coral Reefs. https://doi.org/10.1007/s00338-026-02835-w 
 
 ## Description of the data 
+
+Because of the file size, some data are not updated on GitHub, but can be accessed at: (https://doi.org/10.5061/dryad.ht76hdrxc)
  
 ### Data/Bleaching Folder:
 * File: Bleaching_Survey_05022025.csv
@@ -56,7 +58,7 @@ S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 ** S21 is Sharp Island, S18 is Bluff Island and S1 is Tung Ping Chau
 
 ### Satellite
-** Pending to be uploaded (file size problems)
+** Available at https://doi.org/10.5061/dryad.ht76hdrxc
 ** Sea Surface Satellite Data from the Coral Temp: https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php
 ** Data file is "HongKong_CoralTemp_0p25deg.mat" in a Matlab format (.mat)
 
@@ -84,6 +86,9 @@ S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 
 ## The Matlab scripts are: 
 (To be completed)
+* File: CTD_Reading_Plots_CSV_Casts_Gon.m
+** It generates the Contour plots of the 11 CTD stations
+** It generates Fig 3
 
 
 
