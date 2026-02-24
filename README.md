@@ -28,12 +28,11 @@ Quick info
 S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 
 
-### CTD_Transects: 
-** Pending to be uploaded (file size problems)
+### Data/Environment/CTD_Transects: 
 ** Folders per Month/Year Cast "Oct2022", "May2022", "Aug2024", "Nov2024"
-** Each site Folder contains the 11 cast stations in a mat file (.mat)
+** Each Folder contains the Date-Site and the 11 cast stations in a mat file (.mat)
 
-### DEFI_loggers
+### Data/Environment/DEFI_loggers
 ** These are mounted loggers to the bleaching transect pole that monitored exact Depth, Temperature and Light at the actual coral levels
 ** Two folders "082024" and "112024"
 ** File of "DEFI_Average_Transects_202408.xlsx" contains the post-processed data
@@ -85,10 +84,12 @@ S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 ** The best models are Bayes0_Depth and Bayes1_Temp. These are analysed separately.
 
 ## The Matlab scripts are: 
-(To be completed)
 * File: CTD_Reading_Plots_CSV_Casts_Gon.m
 ** It generates the Contour plots of the 11 CTD stations
 ** It generates Fig 3
+** It runs on the Data/Environment/CTD_Transects
+
+* 
 
 
 
