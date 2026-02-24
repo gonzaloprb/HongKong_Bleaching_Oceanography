@@ -12,6 +12,7 @@ Because of some file sizes, some data are not updated on GitHub, but can be acce
  
 ### Data/Bleaching Folder:
 * File: Bleaching_Survey_05022025.csv
+
 Raw data from the bleaching surveys during August 2024, at the peak of the bleaching, and November 2024 post bleaching.
 Please note that the transect surveys were conducted at multi-species-genus levels initially, but that later analysis and results were transformed at genus level only. 
 
