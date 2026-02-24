@@ -7,8 +7,7 @@ close all
 
 
 % Seabirds first
-sb_path = '/Users/gonzaloprb/Documents/AAASea_Science/Publications/HongKong_Bleaching_Oceanography/Data/Environment/Fixed_Temp_Loggers/SBE/';
-
+sb_path = '/Users/gonzaloprb/Documents/AAASea_Science/Publications/HongKong_Bleaching_Oceanography/Data/Envionment/Fixed_Temp_Loggers/SBE';
 
 % Open and extract the data
 
@@ -207,7 +206,7 @@ fprintf('2024: %.2f°C on %s\n', max2024, datestr(maxDate2024, 'dd-mmm-yyyy HH:M
 
 
 % Extract the miniDOT
-minidot_path = '/Users/gonzaloprb/Documents/AAASea_Science/Publications/HongKong_Bleaching_Oceanography/Data/Environment/Fixed_Temp_Loggers/miniDOT/';
+minidot_path = '/Users/gonzaloprb/Documents/AAASea_Science/AAA_Post_Doc_Alex_Wyatt/Hong_Kong_2024_Bleaching/Environmental_Data/miniDOT/Grouped_Data/';
 
 % open and extract data for Bluff HK S18 at 2 m
 

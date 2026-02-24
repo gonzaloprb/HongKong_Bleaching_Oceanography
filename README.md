@@ -41,16 +41,15 @@ S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 
 ### Fixed_Temp_Loggers
 * miniDOT
-** Pending to be uploaded (file size problems)
+** Available at https://doi.org/10.5061/dryad.ht76hdrxc
 ** These data contain temperatures and oxygen from fixed loggers (PME) at different sites and depths
 ** They contain data from 20240428 to post bleaching surveys at 20241105
 ** Data is in a Matlab file format (.mat)
 ** S21 is Sharp Island, S18 is Bluff Island
 ** miniDOT loggers were not deployed at S1 Tung Ping Chau
 
-
 * SBE
-** Pending to be uploaded (file size problems)
+** Available at https://doi.org/10.5061/dryad.ht76hdrxc
 ** These data contain temperatures from fixed loggers (Seabirds) at different sites and depths
 ** They contain data from 20201104 to post bleaching surveys at 20241106
 ** Data is in a Matlab file format (.mat)
@@ -59,7 +58,7 @@ S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 ### Satellite
 ** Available at https://doi.org/10.5061/dryad.ht76hdrxc
 ** Sea Surface Satellite Data from the Coral Temp: https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php
-** Data file is "HongKong_CoralTemp_0p25deg.mat" in a Matlab format (.mat)
+** Data file is "HongKong_CoralTemp_0p25deg.mat"
 
 ## The R_Scripts are:
 * File: Data_Viz_Preliminary.R
@@ -89,10 +88,24 @@ S1 = Tung Ping Chau,  S18 = Bluff Island, S21 = Sharp Island
 ** It generates Fig 3
 ** It runs on the Data/Environment/CTD_Transects
 
-* 
+* File: Temp_Loggers_Read.m
+** It analyses the miniDOT and Seabird fixed logger temperatures
+** It generates Fig 2 b and c
+** It generates data for Table 1
+** The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
+
+* File: Plot_LongTermSST_Gon.m
+** It analyses the Satellite data from https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php
+** It generates Fig 2 a
+** The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
+
+* File: Plot_GSHHS_coastline_Gon_Fastcode.m
+** It plots the SST map
+** It generates Fig 1
+** The data can be accessed at https://doi.org/10.5061/dryad.ht76hdrxc
 
 
-
+## Final comment: 
 If you have any requests, do not hesitate to contact: 
 gonzalo.prb[@]gmail.com 
 or 
