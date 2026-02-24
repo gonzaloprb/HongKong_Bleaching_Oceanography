@@ -72,9 +72,10 @@ Data is in a Matlab file format (.mat)
 ### Data/Environment/Satellite
 Available at https://doi.org/10.5061/dryad.ht76hdrxc
 
+Data file is "HongKong_CoralTemp_0p25deg.mat"
+
 Sea Surface Satellite Data from the Coral Temp: https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php
 
-Data file is "HongKong_CoralTemp_0p25deg.mat"
 
 ## The R_Scripts are:
 * File: Data_Viz_Preliminary.R
