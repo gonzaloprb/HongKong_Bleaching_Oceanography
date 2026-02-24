@@ -8,12 +8,12 @@ Citation: Pérez-Rosales G., Pei, Y.-D., Bennet-Williams J., King T.B., Rummel M
 
 ## Description of the data 
 
-Because of the file size, some data are not updated on GitHub, but can be accessed at: (https://doi.org/10.5061/dryad.ht76hdrxc)
+Because of some file sizes, some data are not updated on GitHub, but can be accessed at: (https://doi.org/10.5061/dryad.ht76hdrxc)
  
 ### Data/Bleaching Folder:
 * File: Bleaching_Survey_05022025.csv
-** Raw data from the bleaching surveys during August 2024, at the peak of the bleaching, and November 2024 post bleaching.
-** Please note that the transect surveys were conducted at multi-species-genus levels initially, but that later analysis and results were transformed at genus level only. 
+Raw data from the bleaching surveys during August 2024, at the peak of the bleaching, and November 2024 post bleaching.
+Please note that the transect surveys were conducted at multi-species-genus levels initially, but that later analysis and results were transformed at genus level only. 
 
 * File: data_bm_2022.csv
 ** Bleaching data from 2022 (Chung et al 2024 Coral Reefs https:// doi. org/ 10. 1007/ S00338- 024- 02533-5). Processed with "Data_Viz_Chung_Data_2022.R" from original data files inside Bleaching/Chung_data/.  
