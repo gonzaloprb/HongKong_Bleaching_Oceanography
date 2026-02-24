@@ -47,7 +47,7 @@ File of "DEFI_Average_Transects_202408.xlsx" contains the post-processed data
 
 The November "112024" data was not used for the Bayesian model or the analysis
 
-### Fixed_Temp_Loggers
+### Data/Environment/Fixed_Loggers
 * miniDOT
 Available at https://doi.org/10.5061/dryad.ht76hdrxc
 
@@ -69,7 +69,7 @@ They contain data from 20201104 to post bleaching surveys at 20241106
 Data is in a Matlab file format (.mat)
 
 
-### Satellite
+### Data/Environment/Satellite
 Available at https://doi.org/10.5061/dryad.ht76hdrxc
 
 Sea Surface Satellite Data from the Coral Temp: https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php
