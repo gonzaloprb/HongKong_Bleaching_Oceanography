@@ -13,7 +13,7 @@ Because of some file sizes, some data are not updated on GitHub, but can be acce
 ### Data/Bleaching Folder:
 * File: Bleaching_Survey_05022025.csv
 
-Info
+Info:
 	Column Site – study site (Sharp Island, Bluff Island, Tung Ping Chau)
 	Column Date – date of survey
 	Column Depth - categorical across three depth ranges (1_2m, 2_3m, 4_5m)
@@ -28,7 +28,7 @@ Please note that the transect surveys were conducted at multi-species-genus leve
 
 * File: data_bm_2022.csv
 
-Info
+Info:
 	Column Site – three study sites (Sharp Island, Bluff Island, Tung Ping Chau)
 	Column Depth - categorical across two depths (2 and 3)
 	Column Species – categorical species ID taxa, directly at genus levels
@@ -40,7 +40,7 @@ Bleaching data from 2022 (Chung et al 2024 Coral Reefs https:// doi. org/ 10. 10
 
 * File: data_bm_2024.csv
 
-Info
+Info:
 	Column Site – study site (Sharp Island, Bluff Island, Tung Ping Chau)
 	Column Depth - categorical across three depth ranges (1, 2 and 3); equivalent to 1_2m, 2_3m and 4_5m
 	Column Transect – categorical three transects (T1, T2, T3)
@@ -112,17 +112,20 @@ File of "DEFI_Average_Transects_202408.xlsx" contains the post-processed data
 ** The raw data are in the form of DEFI2-L, DEFI-D20 and DEFI-T csv files
 
 For DEFI-D20
+
 	Column TimeStamp – time in format YYYY/mm/dd hh:mm:ss
 	Column Pressure (MPa)
 	Column Depth (m)
 	Column Batt – battery (Volts) 
 	
 For DEFI-T
+
 	Column TimeStamp – time in format YYYY/mm/dd hh:mm:ss
 	Column Temp – temperature (°C)
 	Column Batt – battery (Volts) 
 	
 For DEFI2-L
+
 	Column TimeStamp – time in format YYYY/mm/dd hh:mm:ss
 	Column PAR – photosynthesis Active Radiation, light (umol/(m^2s)
 	Column Batt – battery (Volts) 
@@ -138,7 +141,6 @@ They contain data from 20240428 to post bleaching surveys at 20241105
 
 Data is in a Matlab file format (.mat)
 
-Info
 	BV (Volts) - battery voltage
   	DH – MATLAB cell array containing cumulative Degree Heating metrics calculated from temperature anomaly above the bleaching threshold at multiple temporal scales:
 		DH{1} (°C minutes) – Degree heating minutes 
@@ -177,7 +179,6 @@ They contain data from 20201104 to post bleaching surveys at 20241106
 
 Data is in a Matlab file format (.mat)
 
-Info
 	DH – MATLAB cell array containing cumulative Degree Heating metrics calculated from temperature anomaly above the bleaching threshold at multiple temporal scales:
 		DH{1} (°C minutes) – Degree heating minutes 
 		DH{2} (°C hours) – Degree heating hours 
@@ -214,7 +215,6 @@ Available at https://doi.org/10.5061/dryad.ht76hdrxc
 
 Data file is "HongKong_CoralTemp_0p25deg.mat" and contains the following variables: 
 
-Info
 	SST – Sea surface temperature (°C).
 	SST_DH – MATLAB cell array containing cumulative Degree Heating metrics calculated from sea surface temperature anomalies above the bleaching threshold at different temporal scales:
 		SST_DH{1} (°C days) – Degree heating days 
