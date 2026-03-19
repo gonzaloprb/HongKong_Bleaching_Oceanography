@@ -13,6 +13,7 @@ Because of some file sizes, some data are not updated on GitHub, but can be acce
 ### Data/Bleaching Folder:
 * File: Bleaching_Survey_05022025.csv
 
+Info
 	Column Site – study site (Sharp Island, Bluff Island, Tung Ping Chau)
 	Column Date – date of survey
 	Column Depth - categorical across three depth ranges (1_2m, 2_3m, 4_5m)
@@ -27,6 +28,7 @@ Please note that the transect surveys were conducted at multi-species-genus leve
 
 * File: data_bm_2022.csv
 
+Info
 	Column Site – three study sites (Sharp Island, Bluff Island, Tung Ping Chau)
 	Column Depth - categorical across two depths (2 and 3)
 	Column Species – categorical species ID taxa, directly at genus levels
@@ -38,6 +40,7 @@ Bleaching data from 2022 (Chung et al 2024 Coral Reefs https:// doi. org/ 10. 10
 
 * File: data_bm_2024.csv
 
+Info
 	Column Site – study site (Sharp Island, Bluff Island, Tung Ping Chau)
 	Column Depth - categorical across three depth ranges (1, 2 and 3); equivalent to 1_2m, 2_3m and 4_5m
 	Column Transect – categorical three transects (T1, T2, T3)
@@ -135,8 +138,9 @@ They contain data from 20240428 to post bleaching surveys at 20241105
 
 Data is in a Matlab file format (.mat)
 
-  BV (Volts) - battery voltage
-  DH – MATLAB cell array containing cumulative Degree Heating metrics calculated from temperature anomaly above the bleaching threshold at multiple temporal scales:
+Info
+	BV (Volts) - battery voltage
+  	DH – MATLAB cell array containing cumulative Degree Heating metrics calculated from temperature anomaly above the bleaching threshold at multiple temporal scales:
 		DH{1} (°C minutes) – Degree heating minutes 
 		DH{2} (°C hours) – Degree heating hours 
 		DH{3} (°C days) – Degree heating days 
@@ -173,7 +177,8 @@ They contain data from 20201104 to post bleaching surveys at 20241106
 
 Data is in a Matlab file format (.mat)
 
-DH – MATLAB cell array containing cumulative Degree Heating metrics calculated from temperature anomaly above the bleaching threshold at multiple temporal scales:
+Info
+	DH – MATLAB cell array containing cumulative Degree Heating metrics calculated from temperature anomaly above the bleaching threshold at multiple temporal scales:
 		DH{1} (°C minutes) – Degree heating minutes 
 		DH{2} (°C hours) – Degree heating hours 
 		DH{3} (°C days) – Degree heating days 
@@ -209,21 +214,21 @@ Available at https://doi.org/10.5061/dryad.ht76hdrxc
 
 Data file is "HongKong_CoralTemp_0p25deg.mat" and contains the following variables: 
 
-SST – Sea surface temperature (°C).
-
+Info
+	SST – Sea surface temperature (°C).
 	SST_DH – MATLAB cell array containing cumulative Degree Heating metrics calculated from sea surface temperature anomalies above the bleaching threshold at different temporal scales:
 		SST_DH{1} (°C days) – Degree heating days 
 		SST_DH{2} (°C weeks) – Degree heating weeks 
 		SST_DH{3} (°C months) – Degree heating months 
 	SST_DHt – timestamps associated with the SST_DH metrics, stored as MATLAB serial time (datenum).
 	SSTt – timestamps associated with the SST time series, stored as MATLAB serial time (datenum).
-  Temp_avg_day (°C) – daily average satellite temperature                              
-  Temp_avg_day_std (°C) – daily average satellite temperature standard deviation                 
-  Temp_avg_month (°C) – monthly average satellite temperature                          
-  Temp_avg_month_std (°C) – monthly average satellite temperature standard deviation                      
-  Temp_daily (°C) – satellite daily temperature                               
-  Temp_monthly (°C) – satellite monthly temperature                          
-  YEAR                       
+  	Temp_avg_day (°C) – daily average satellite temperature                              
+  	Temp_avg_day_std (°C) – daily average satellite temperature standard deviation                 
+  	Temp_avg_month (°C) – monthly average satellite temperature                          
+  	Temp_avg_month_std (°C) – monthly average satellite temperature standard deviation                      
+  	Temp_daily (°C) – satellite daily temperature                               
+  	Temp_monthly (°C) – satellite monthly temperature                          
+  	YEAR                       
 
 Sea Surface Satellite Data from the Coral Temp: https://coralreefwatch.noaa.gov/product/5km/index_5km_sst.php
 
